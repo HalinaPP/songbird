@@ -3,15 +3,19 @@ import React, {Component} from 'react';
 import './levels-list-item.css';
 
 export default class LevelsListItem extends Component{
-  constructor(){
-    super();
-    
+  constructor(props){
+    super(props);
+    this.state = {
+      active: props.isActive
+    } 
   }
  
   render(){
-    
-   return (
-     
-    );
+    const {title} = this.props;
+    return (
+     <a href='/#' className="page-link">
+       {title}
+      </a>
+   );
   }
 }

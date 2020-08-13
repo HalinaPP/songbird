@@ -1,9 +1,7 @@
 import React from 'react';
 import './element-title.css';
 
-const ElementTitle = () =>{
-    return (
-        
-      );
+const ElementTitle = ({title}) =>{
+    return <span>{title}</span>;
 }
 export default ElementTitle;
