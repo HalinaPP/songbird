@@ -10,13 +10,11 @@ class Question extends Component {
     constructor(props){
         super(props);
         this.state = {
-          //  isGuessed:false,
-         //   imageFileName: unknownTransport,
             name: '*****'
         }
     }
     render(){
-        const {isGuessed,  name} = this.state;
+        const {name} = this.state;
         const {element, trueAnswer} = this.props;
         const imageFileName = trueAnswer ? element.image : unknownTransport;
         const title = trueAnswer ? element.name : name;
@@ -24,10 +22,9 @@ class Question extends Component {
             <div className="col-lg-12 card question">
                 <ElementImage imageFileName = {imageFileName}/>
                 <div className="question-info">
-
                     <ElementTitle title={title}/>
                     <hr/>
-                    <ElementAudio audioFileName={element.audio}/>
+                    <ElementAudio audioFileName={element.audio} isTrueAnswerDone={trueAnswer}/>
                 </div>
             </div>
         );
