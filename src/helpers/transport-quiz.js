@@ -16,8 +16,8 @@ const transportData = [
                 name: 'Троллейбус',
                 species: 'trolleybus',
                 description: 'Описание2',
-                image: '/images/public-transport/trolleybus.jpg',
-                audio: '/audio/public-transport/trolleybus.mp3'
+                image: '/images/public-transport/trolley-bus.jpg',
+                audio: '/audio/public-transport/trolley-bus.mp3'
 
             },
             {
@@ -61,12 +61,53 @@ const transportData = [
         elements:[
             {
                 id: 1,
-                name: 'Автобус',
-                species: 'Bus',
+                name: 'Водный мотоцикл',
+                species: 'Jet ski',
                 description: 'Описание',
-                image: './images/bus.jpg',
-                audio: './audio/bus.mp3'
-            }
+                image: './images/water/water-bike.jpg',
+                audio: './audio/water/water-bike.mp3'
+            },
+            {
+                id: 2,
+                name: 'Деревянная лодка с веслами',
+                species: 'Wooden boat with oars',
+                description: 'Описание',
+                image: './images/water/wooden-boat.jpg',
+                audio: './audio/water/wooden-boat.mp3'
+            },
+            {
+                id: 3,
+                name: 'Каяк',
+                species: 'Кayak',
+                description: 'Описание',
+                image: './images/water/kayak-boat.jpg',
+                audio: './audio/water/kayak-boat.mp3'
+            },
+            {
+                id: 4,
+                name: 'Моторная лодка',
+                species: 'Motor boat',
+                description: 'Описание',
+                image: './images/water/boat-motornaya.jpg',
+                audio: './audio/water/boat-motornaya.mp3'
+            },
+            {
+                id: 5,
+                name: 'Пароход',
+                species: 'parahod',
+                description: 'Описание',
+                image: './images/water/parahod.jpg',
+                audio: './audio/water/parahod.mp3'
+            },
+            {
+                id: 6,
+                name: 'Подлодка',
+                species: 'Submarine',
+                description: 'Описание',
+                image: './images/water/podlodka.jpg',
+                audio: './audio/water/podlodka.mp3'
+            },
+           
         ]
     },
     {
@@ -75,11 +116,52 @@ const transportData = [
         elements:[
             {
                 id: 1,
-                name: 'Автобус',
-                species: 'Bus',
+                name: 'Игрушечный поезд',
+                species: 'Toy train',
                 description: 'Описание',
-                image: './images/bus.jpg',
-                audio: './audio/bus.mp3'
+                image: './images/railway/toy-train.jpg',
+                audio: './audio/railway/toy-train.mp3'
+            },
+            {
+                id: 2,
+                name: 'Метро',
+                species: 'Subway',
+                description: 'Описание',
+                image: './images/railway/metro.jpg',
+                audio: './audio/railway/metro.mp3'
+            },
+            {
+                id: 3,
+                name: 'Паровоз',
+                species: 'Locomotive',
+                description: 'Описание',
+                image: './images/railway/old-poezd.jpg',
+                audio: './audio/railway/old-poezd.mp3'
+            },
+            {
+                id: 4,
+                name: 'Пассажирский поезд',
+                species: 'Passenger train',
+                description: 'Описание',
+                image: './images/railway/passazir-poezd.jpg',
+                audio: './audio/railway/passazir-poezd.mp3'
+            },
+            {
+                id: 5,
+                name: 'Товарный поезд',
+                species: 'Freight train',
+                description: 'Описание',
+                image: './images/railway/tovarniy-poezd.jpg',
+                audio: './audio/railway/tovarniy-poezd.mp3'
+            },
+           
+            {
+                id: 6,
+                name: 'Электричка',
+                species: 'Electric train',
+                description: 'Описание',
+                image: './images/railway/elektrichka.jpg',
+                audio: './audio/railway/elektrichka.mp3'
             }
         ]
     },
