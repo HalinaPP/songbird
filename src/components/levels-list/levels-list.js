@@ -7,20 +7,23 @@ class LevelsList extends Component {
  // alert(levelsData);
   constructor(props){
     super(props);
-    this.state ={
-      currentLevel:props.levelsData[0][0]
-    }
+   
   }
   render(){
-    const {levelsData} = this.props;
+    const {levelsData,activeLevel} = this.props;
     const items = levelsData.map((title)=>{
-      const isActive = this.state.currentLevel===title[0] ? true : false;
-      const classNameItem = isActive ? "page-item active col-lg-2" : "page-item  col-lg-2";
-      return <li key={title[0]} className={classNameItem}><LevelsListItem  title={title[1]} isActive={isActive}/></li> ;
+      console.log('l='+activeLevel+' tc='+title[0]);
+      const isActive = activeLevel===title[0] ? true : false;
+      const classNameItem = isActive ? "page-item active col-lg-2 col-sm-6 " : "page-item  col-lg-2";
+      return (
+        <li key={title[1]} className={classNameItem}>
+            <LevelsListItem  title={title[2]} isActive={isActive}/>
+        </li>
+        );
     });
 
     return (
-      <ul className="pagination">
+      <ul className="pagination d-flex">
         {items}
       </ul>
     );
