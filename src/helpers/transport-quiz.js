@@ -7,7 +7,7 @@ const transportData = [
                 id: 1,
                 name: 'Автобус',
                 species: 'Bus',
-                description: 'Описание',
+                description: 'Авто́бус (сокращение от автомобиль-омнибус) —механическое моторное транспортное средство, предназначенное для перевозки пассажиров, приводимое в движение источником энергии, производимым из топлива.',
                 image: '/images/public-transport/bus.jpg',
                 audio: '/audio/public-transport/bus.mp3'
             },
@@ -171,13 +171,53 @@ const transportData = [
         elements:[
             {
                 id: 1,
-                name: 'Автобус',
-                species: 'Bus',
+                name: 'Вертолет',
+                species: 'Helikopter',
                 description: 'Описание',
-                image: './images/bus.jpg',
-                audio: './audio/bus.mp3'
+                image: './images/air/helikopter.jpg',
+                audio: './audio/air/helikopter.mp3'
+            },
+            {
+                id: 2,
+                name: 'Воздушный шар',
+                species: 'Air baloon',
+                description: 'Описание',
+                image: './images/air/air-baloon.jpg',
+                audio: './audio/air/air-baloon.mp3'
+            },
+            {
+                id: 3,
+                name: 'Машина будущего',
+                species: 'Car of the future',
+                description: 'Описание',
+                image: './images/air/future-car.jpg',
+                audio: './audio/air/future-car.mp3'
+            },
+            {
+                id: 4,
+                name: 'Пассажирский самолет',
+                species: 'Passenger plane',
+                description: 'Описание',
+                image: './images/air/plane.jpg',
+                audio: './audio/air/plane.mp3'
+            },
+            {
+                id: 5,
+                name: 'Ракета',
+                species: 'Rocket',
+                description: 'Описание',
+                image: './images/air/raketa.jpg',
+                audio: './audio/air/raketa.mp3'
+            },
+            {
+                id: 6,
+                name: 'Самолет-истребитель',
+                species: 'Fighter aircraft',
+                description: 'Описание',
+                image: './images/air/istrebitel.jpg',
+                audio: './audio/air/istrebitel.mp3'
             }
-        ]
+       ]
     },
     {
         alias: 'twoWheelerTransport',
@@ -185,11 +225,51 @@ const transportData = [
         elements:[
             {
                 id: 1,
-                name: 'Автобус',
-                species: 'Bus',
+                name: 'Велосипед',
+                species: 'Bicycle',
                 description: 'Описание',
-                image: './images/bus.jpg',
-                audio: './audio/bus.mp3'
+                image: './images/two-wheelers/bicycle.jpg',
+                audio: './audio/two-wheelers/bicycle.mp3'
+            },
+            {
+                id: 2,
+                name: 'Мопед',
+                species: 'Moped',
+                description: 'Описание',
+                image: './images/two-wheelers/moped.jpg',
+                audio: './audio/two-wheelers/moped.mp3'
+            },
+            {
+                id: 3,
+                name: 'Мотоцикл',
+                species: 'Motorbike',
+                description: 'Описание',
+                image: './images/two-wheelers/bike.jpg',
+                audio: './audio/two-wheelers/bike.mp3'
+            },
+            {
+                id: 4,
+                name: 'Питбайк',
+                species: 'Pitbike',
+                description: 'Описание',
+                image: './images/two-wheelers/pitbyke.jpg',
+                audio: './audio/two-wheelers/pitbyke.mp3'
+            },
+            {
+                id: 5,
+                name: 'Самокат',
+                species: 'Kick scooter',
+                description: 'Описание',
+                image: './images/two-wheelers/samokat.jpg',
+                audio: './audio/two-wheelers/samokat.mp3'
+            },
+            {
+                id: 6,
+                name: 'Спортивный мотоцикл',
+                species: 'Sport bike',
+                description: 'Описание',
+                image: './images/two-wheelers/sport-bike.jpg',
+                audio: './audio/two-wheelers/sport-bike.mp3'
             }
         ]
     },
@@ -199,11 +279,51 @@ const transportData = [
         elements:[
             {
                 id: 1,
-                name: 'Автобус',
-                species: 'Bus',
+                name: 'Автомобиль',
+                species: 'Car',
                 description: 'Описание',
-                image: './images/bus.jpg',
-                audio: './audio/bus.mp3'
+                image: './images/various/car.jpg',
+                audio: './audio/various/car.mp3'
+            },
+            {
+                id: 2,
+                name: 'Картинг',
+                species: 'Karting',
+                description: 'Описание',
+                image: './images/various/karting.jpg',
+                audio: './audio/various/karting.mp3'
+            },
+            {
+                id: 3,
+                name: 'Повозка с лошадью',
+                species: 'Horse carriage',
+                description: 'Описание',
+                image: './images/various/horse-povozka.jpg',
+                audio: './audio/various/horse-povozka.mp3'
+            },
+            {
+                id: 4,
+                name: 'Скейтбоард',
+                species: 'Skateboard',
+                description: 'Описание',
+                image: './images/various/skeitboard.jpg',
+                audio: './audio/various/skeitboard.mp3'
+            },
+            {
+                id: 5,
+                name: 'Трактор',
+                species: 'Tractor',
+                description: 'Описание',
+                image: './images/various/tractor.jpg',
+                audio: './audio/various/tractor.mp3'
+            },
+            {
+                id: 6,
+                name: 'Электро автомобиль',
+                species: 'Electro car',
+                description: 'Описание',
+                image: './images/various/electro-car.jpg',
+                audio: './audio/various/electro-car.mp3'
             }
         ]
     }
