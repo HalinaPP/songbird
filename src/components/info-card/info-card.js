@@ -8,26 +8,32 @@ import ElementAudio from '../element-audio';
 import ElementDescription from '../element-description';
 
 class InfoCard extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+        console.log('pr1'+this.props.selectElement);
         this.state = {
-            answerId:0
+            answerId:null
         }
     }
     render(){
-        if(this.state.answerId>0){
+        console.log('pr'+this.props.selectElement.id);
+        const {id,image, name, audio,species,description} = this.props.selectElement;
+        console.log('answer = '+this.state.answerId);
+        if(id>0){
             return (
                 <div className="">
-                    <ElementImage />
-                    <ElementTitle />
-                    <ElementTitleEng />
-                    <ElementAudio />
-                    <ElementDescription />
+                    <ElementImage imageFileName={image}/>
+                    <div className="info-card-info">
+                        <ElementTitle title={name}/>
+                        <ElementTitleEng titleEng={species}/>
+                        <ElementAudio audioFileName={audio}/>
+                    </div>
+                    <ElementDescription description={description} />
                 </div>
             );
         }else{
             return (
-                <div>Прослушайте запись и выберите правильный ответ.</div>
+                <div>Послушайте плеер.<br/>Выберите правильный ответ из списка.</div>
             );
         }
     }

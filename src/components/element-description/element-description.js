@@ -1,7 +1,7 @@
 import React from 'react';
 import './element-description.css';
 
-const ElementDescription = () =>{
-    return <span></span>;
+const ElementDescription = ({description}) =>{
+return <span>{description}</span>;
 }
 export default ElementDescription;

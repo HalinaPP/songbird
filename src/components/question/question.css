@@ -1,1 +1,5 @@
-.question{padding: 16px;margin-bottom: 25px;border:0!important;border-radius: 0.6rem;}
+.question{padding: 16px;margin-bottom: 25px;border:0!important;border-radius: 0.6rem; flex-direction: row!important;}
+
+.question-info{width:calc( 100% - 200px );margin:6px 60px 0px 40px}
+.question-info h2{font-size:2rem;}
+.question-info hr{background-color: #808080;width:100%}

@@ -1,20 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './question.css';
 
 import ElementImage from '../element-image';
 import ElementTitle from '../element-title';
 import ElementAudio from '../element-audio';
+import unknownTransport from '../../helpers/unknown.jpg';
 
-const Question = ({element}) =>{
-    return (
-        <div className="col-lg-12 card question">
-            <ElementImage imageFileName = {element.image}/>
-            <div>
-                <ElementTitle title={element.name}/>
-                <hr/>
-                <ElementAudio audioFileName={element.audio}/>
+class Question extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+          //  isGuessed:false,
+         //   imageFileName: unknownTransport,
+            name: '*****'
+        }
+    }
+    render(){
+        const {isGuessed,  name} = this.state;
+        const {element, trueAnswer} = this.props;
+        const imageFileName = trueAnswer ? element.image : unknownTransport;
+        const title = trueAnswer ? element.name : name;
+        return (
+            <div className="col-lg-12 card question">
+                <ElementImage imageFileName = {imageFileName}/>
+                <div className="question-info">
+
+                    <ElementTitle title={title}/>
+                    <hr/>
+                    <ElementAudio audioFileName={element.audio}/>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 export default Question;
