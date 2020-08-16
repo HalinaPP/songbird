@@ -1,18 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './levels-list.css';
 
 import LevelsListItem from '../levels-list-item';
 
-class LevelsList extends Component {
- // alert(levelsData);
-  constructor(props){
-    super(props);
+const LevelsList = ({levelsData,activeLevel}) => {
    
-  }
-  render(){
-    const {levelsData,activeLevel} = this.props;
     const items = levelsData.map((title)=>{
-      console.log('l='+activeLevel+' tc='+title[0]);
       const isActive = activeLevel===title[0] ? true : false;
       const classNameItem = isActive ? "page-item active col-lg-2 col-sm-6 " : "page-item  col-lg-2";
       return (
@@ -27,6 +20,6 @@ class LevelsList extends Component {
         {items}
       </ul>
     );
-  }
+
 }
 export default LevelsList;
