@@ -9,7 +9,7 @@ const BtnNextLevel = (props) => {
             disabled={disabledProp}
             onClick = {()=>props.onBtnClick()}
         >
-            Next level
+           {props.btnLabel}
         </button>
     );
 }
