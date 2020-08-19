@@ -18,6 +18,9 @@ class Question extends Component {
         const {element, trueAnswer} = this.props;
         const imageFileName = trueAnswer ? element.image : unknownTransport;
         const title = trueAnswer ? element.name : name;
+        if(trueAnswer){
+            console.log(element.name);
+        }
         return (
             <div className="col-lg-12 card question">
                 <ElementImage imageFileName = {imageFileName}/>
