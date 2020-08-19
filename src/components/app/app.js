@@ -22,7 +22,7 @@ class App extends Component {
     this.maxForLevel = 5;
     this.state = {
       isTrueAnswerDone:false,
-      level:5,
+      level:0,
       randomIndex:this.getRandomElememt(),
       levelsData:this.levelsData,
       score:0,
