@@ -1,5 +1,13 @@
-.pagination .page-link,.pagination .page-link:hover{cursor: auto;background-color:#007bff;border-color:#007bff;background-image:none;}
-.pagination .page-item.active .page-link{background-color:#5bc0de;border-color:#007bff;background-image:none;}
+.pagination{flex-wrap: wrap;border-radius:0.25rem;border:0}
+.page-item{flex: auto;text-align: center;}
+.pagination .page-link,
+.pagination .page-link:hover{text-shadow:none;cursor: auto;
+                            background-color:#007bff;border:0;background-image:none;
+                            border-radius:none;margin-left:0px;}
+.pagination .page-item.active .page-link{background-color:#5bc0de;
+                                        border-color:#007bff;background-image:none;}
+.page-item:last-child .page-link,.page-item:first-child .page-link{border-radius:0;border:0}
 .pagination .col-lg-2{padding:0px;text-align: center;}
-.page-item:first-child .page-link {border-top-left-radius: 0.6rem;border-bottom-left-radius: 0.6rem;}
+/*.page-item:first-child .page-link {border-top-left-radius: 0.6rem;border-bottom-left-radius: 0.6rem;}
 .page-item:last-child .page-link {border-top-right-radius: 0.6rem;border-bottom-right-radius: 0.6rem;}
+*/

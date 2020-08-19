@@ -11,19 +11,26 @@ const InfoCard = (props) => {
     if(props.selectElement){
         const {image, name, audio,species,description} = props.selectElement;
         return (
-            <div className="">
-                <ElementImage imageFileName={image}/>
-                <div className="info-card-info">
-                    <ElementTitle title={name}/>
-                    <ElementTitleEng titleEng={species}/>
-                    <ElementAudio audioFileName={audio}/>
+            <div className="card info-card">
+                <div className="info-card-bl">
+                    <ElementImage imageFileName={image}/>
+                    <div className="info-card-info">
+                        <ElementTitle title={name}/>
+                        <hr/>
+                        <ElementTitleEng titleEng={species}/>
+                        <hr/>
+                        <ElementAudio audioFileName={audio}/>
+                    </div>
                 </div>
                 <ElementDescription description={description} />
+                
+               
             </div>
+            /* */
         );
     }else{
         return (
-            <div>Послушайте плеер.<br/>Выберите правильный ответ из списка.</div>
+            <div className="card info-card">Послушайте плеер.<br/>Выберите правильный ответ из списка.</div>
         );
     }
 }
