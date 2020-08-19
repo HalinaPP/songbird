@@ -22,7 +22,7 @@ class App extends Component {
     this.maxForLevel = 5;
     this.state = {
       isTrueAnswerDone:false,
-      level:0,
+      level:5,
       randomIndex:this.getRandomElememt(),
       levelsData:this.levelsData,
       score:0,
@@ -62,7 +62,8 @@ class App extends Component {
     });
   }
 
- onBtnPlayAgainClick = () => {
+ onBtnPlayAgainClick = (audio) => {
+  audio.pause();
     this.setState((state) => {
       return {
         level:0,
@@ -111,7 +112,7 @@ class App extends Component {
           <Congratulations 
             score={score} 
             maxCount={this.levelCount*this.maxForLevel}
-            onBtnPlayAgainClick = {()=>this.onBtnPlayAgainClick()}/>
+            onBtnPlayAgainClick = {this.onBtnPlayAgainClick}/>
         </div>
       );
     }else{

@@ -24,7 +24,7 @@ const Congratulations = (props) =>{
             <BtnNextlevel 
                 active={true}  
                 btnLabel='Сыграть еще раз' 
-                onBtnClick = {()=>props.onBtnPlayAgainClick()}/>
+                onBtnClick = {()=>props.onBtnPlayAgainClick(audio)}/>
         </div>
     );
 }
