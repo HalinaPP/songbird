@@ -21,9 +21,7 @@ class App extends Component {
     this.levelCount = this.props.transportData.length;
     this.maxForLevel = 5;
     this.state = {
-    //  selectedElementIdDone:null,
       isTrueAnswerDone:false,
-      //answerIndex:null,
       level:0,
       randomIndex:this.getRandomElememt(),
       levelsData:this.levelsData,
@@ -52,8 +50,7 @@ class App extends Component {
   }
 
   onBtnClick = () => {
-    console.log('next');
-    this.setState((state) => {
+   this.setState((state) => {
       return {
         level:state.level+1,
         selectedElementId:null,
@@ -66,7 +63,6 @@ class App extends Component {
   }
 
  onBtnPlayAgainClick = () => {
-   console.log('play again');
     this.setState((state) => {
       return {
         level:0,
@@ -83,7 +79,6 @@ class App extends Component {
 
   checkAnswer = id =>{
     this.setState((state)=>{
-      
       if(id === (state.randomIndex+1)){
         const audio = new Audio(rightAnswerAudio);
         audio.play();
@@ -101,14 +96,6 @@ class App extends Component {
       }
     });
   }
-
-  /*setAnswer = (index) =>{
-    this.setState(()=>{
-      return {
-        answerIndex:index
-      };
-    });
-  }*/
 
   getRandomElememt = ()=>{
     const randIndex = Math.floor(Math.random()*6);
@@ -128,7 +115,6 @@ class App extends Component {
         </div>
       );
     }else{
-
       const elementsOfLevel = this.getElementsOfLevel(level);
       const randomElement = elementsOfLevel[randomIndex];
       const selectElement = selectedElementId !== null 
@@ -139,7 +125,7 @@ class App extends Component {
             <AppHeader levelsData={levelsData} activeLevel = {level} score={score}/>
             <Question element={randomElement} trueAnswer={isTrueAnswerDone}/>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-lg-6 col-md-6">
                 <AnswerChoiceList 
                   answerElementIndex={randomElement.id}  
                   elementsOfLevel={elementsOfLevel} 
@@ -148,7 +134,7 @@ class App extends Component {
                   onToggleClick = {this.onToggleClick}
                 />
               </div>
-              <div className="col-lg-6 card info-card">
+              <div className="col-lg-6 col-md-6">
                 <InfoCard selectElement={selectElement}/>
               </div>
             </div>
