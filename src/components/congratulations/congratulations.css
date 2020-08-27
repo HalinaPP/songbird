@@ -2,3 +2,5 @@
 .congratulations .card{margin-top:15px;padding:150px 0px;font-size:2rem;text-align:center;border-color:#4b4f55;color:#fff;border-radius: 0.25rem;}
 .congratulations .h1{font-size:3rem!important;margin-bottom:30px;}
 .congratulations span{font-size:2.5rem;color:#007bff;display:contents}
+.congratulations a{font-size:2.5rem;color:#007bff;text-decoration:underline}
+.congratulations a:hover{text-decoration: none;}
