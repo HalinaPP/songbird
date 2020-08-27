@@ -1,0 +1,22 @@
+.rhap_container{background-color:transparent;border:0;box-shadow: none;}
+.rhap_progress-filled  {background-color: #007bff}
+.rhap_progress-indicator{width:16px;height:16px;background-color: #aaa;top:-6px}
+.rhap_download-progress{background-color: #aaa}
+.rhap_time{color:#D3D3D3; font-size:11px}
+.rhap_current-time,.rhap_total-time{position:relative;top: 22px;}
+.rhap_total-time{right:40px}
+.rhap_current-time{left: 40px;}
+.rhap_main-controls {position: relative;top: -40px;left: -20px;}
+.rhap_main-controls-button,.rhap_volume-button{color:#007bff}
+
+.icon {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+  
+  
+  

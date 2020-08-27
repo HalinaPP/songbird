@@ -1,0 +1,5 @@
+.app-header{margin:15px 0px 5px;justify-content: space-between;}
+
+@media(max-width:380px){
+    .app-header img{width:70%}
+}
