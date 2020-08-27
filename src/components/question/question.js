@@ -15,19 +15,21 @@ class Question extends Component {
     }
     render(){
         const {name} = this.state;
-        const {element, trueAnswer} = this.props;
+        const {element, trueAnswer,onTogglePlay} = this.props;
         const imageFileName = trueAnswer ? element.image : unknownTransport;
         const title = trueAnswer ? element.name : name;
-        if(trueAnswer){
-            console.log(element.name);
-        }
+        
         return (
             <div className="col-lg-12 card question">
                 <ElementImage imageFileName = {imageFileName}/>
                 <div className="question-info">
                     <ElementTitle title={title}/>
                     <hr/>
-                    <ElementAudio audioFileName={element.audio} isTrueAnswerDone={trueAnswer}/>
+                    <ElementAudio 
+                        audioFileName={element.audio} 
+                        isTrueAnswerDone={trueAnswer}
+                        onTogglePlay = {onTogglePlay}
+                    />
                 </div>
             </div>
         );

@@ -24,10 +24,10 @@ class App extends Component {
       isTrueAnswerDone:false,
       level:0,
       randomIndex:this.getRandomElememt(),
-      levelsData:this.levelsData,
       score:0,
       scoreCanWork:this.maxForLevel,
-      selectAnswers:[]
+      selectAnswers:[],
+      activeAudioplayer: null
     }
   }
 
@@ -49,15 +49,29 @@ class App extends Component {
       this.checkAnswer(id);
   }
 
-  onBtnClick = () => {
-   this.setState((state) => {
+  onTogglePlay = (player) =>{
+    this.setState((state)=>{
+      if(state.activeAudioplayer!==null && state.activeAudioplayer!==player){
+        state.activeAudioplayer.current.audio.current.pause();
+      }
+      return{
+        activeAudioplayer:player
+      };
+    });
+  }
+
+  onBtnClick = (elementName) => {
+    this.setState((state) => {
+      const newLevel = state.level+1;
+      console.log('Правильный ответ уровня '+newLevel+': '+elementName);
       return {
-        level:state.level+1,
+        level:newLevel,
         selectedElementId:null,
         isTrueAnswerDone:false,
         randomIndex:this.getRandomElememt(),
         scoreCanWork:this.maxForLevel,
-        selectAnswers:[]
+        selectAnswers:[],
+        activeAudioplayer:null
       };
     });
   }
@@ -83,9 +97,11 @@ class App extends Component {
       if(id === (state.randomIndex+1)){
         const audio = new Audio(rightAnswerAudio);
         audio.play();
+        state.activeAudioplayer.current.audio.current.pause();
         return {
           isTrueAnswerDone:true,
-          score:state.score+state.scoreCanWork
+          score:state.score+state.scoreCanWork,
+          activeAudioplayer:null
         };
       }else{
         const audio = new Audio(wrongAnswerAudio);
@@ -104,7 +120,7 @@ class App extends Component {
   }
 
   render(){
-    const {selectedElementId, isTrueAnswerDone,level,levelsData,
+    const {selectedElementId, isTrueAnswerDone,level,
             randomIndex,score,selectAnswers} = this.state;
     if(level === this.levelCount){
       return (
@@ -123,8 +139,12 @@ class App extends Component {
                             : null;
       return (
           <div className="container">
-            <AppHeader levelsData={levelsData} activeLevel = {level} score={score}/>
-            <Question element={randomElement} trueAnswer={isTrueAnswerDone}/>
+            <AppHeader levelsData={this.levelsData} activeLevel = {level} score={score}/>
+            <Question 
+              element={randomElement} 
+              trueAnswer={isTrueAnswerDone}
+              onTogglePlay = {this.onTogglePlay}
+            />
             <div className="row">
               <div className="col-lg-6 col-md-6">
                 <AnswerChoiceList 
@@ -136,13 +156,16 @@ class App extends Component {
                 />
               </div>
               <div className="col-lg-6 col-md-6">
-                <InfoCard selectElement={selectElement}/>
+                <InfoCard 
+                  selectElement={selectElement}
+                  onTogglePlay = {this.onTogglePlay}
+                />
               </div>
             </div>
             <BtnNextLevel 
               active={isTrueAnswerDone} 
               btnLabel = 'Следующий уровень'
-              onBtnClick = {()=>this.onBtnClick()}/>
+              onBtnClick = {()=>this.onBtnClick(randomElement.name)}/>
           </div>
         );
       }

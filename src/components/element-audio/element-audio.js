@@ -2,21 +2,21 @@ import React, {Component} from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './element-audio.css';
-
+ 
 class ElementAudio extends Component{
   constructor(props){
     super(props);
     this.player = React.createRef();
   }
   
+  onPlay(){
+    this.props.onTogglePlay(this.player);
+  }
+  
   render(){
-    const {audioFileName,isTrueAnswerDone} = this.props;
+    const {audioFileName} = this.props;
     const contr = ['MAIN_CONTROLS','VOLUME_CONTROLS'];
-    
-    if(isTrueAnswerDone){
-      this.player.current.audio.current.pause();
-    }
-    
+  
     return (
           <AudioPlayer
             src={audioFileName}
@@ -24,6 +24,7 @@ class ElementAudio extends Component{
             showJumpControls={false}
             autoPlayAfterSrcChange={false}
             ref={this.player}
+            onPlay = {()=>this.onPlay()}
           />
         );
     }

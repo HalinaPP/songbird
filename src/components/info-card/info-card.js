@@ -19,7 +19,10 @@ const InfoCard = (props) => {
                         <hr/>
                         <ElementTitleEng titleEng={species}/>
                         <hr/>
-                        <ElementAudio audioFileName={audio}/>
+                        <ElementAudio 
+                            audioFileName={audio}
+                            onTogglePlay = {props.onTogglePlay}
+                        />
                     </div>
                 </div>
                 <ElementDescription description={description} />
