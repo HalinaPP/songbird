@@ -40,13 +40,37 @@ class App extends Component {
       const selAnswers = state.isTrueAnswerDone 
                           ? state.selectAnswers 
                           : state.selectAnswers.concat(id);
-      return{
-        selectedElementId:id,
-        selectAnswers:selAnswers
-      };
+      if(!state.isTrueAnswerDone){
+        if(id === (state.randomIndex+1)){
+          const audio = new Audio(rightAnswerAudio);
+          audio.play();
+          if(state.activeAudioplayer!== null){
+            state.activeAudioplayer.current.audio.current.pause();
+          }
+          return {
+            isTrueAnswerDone:true,
+            score:state.score+state.scoreCanWork,
+            activeAudioplayer:null,
+            selectedElementId:id,
+            selectAnswers:selAnswers
+          };
+        }else{
+          const audio = new Audio(wrongAnswerAudio);
+          audio.play();
+          return {
+            isTrueAnswerDone:false,
+            scoreCanWork:state.scoreCanWork-1,
+            selectedElementId:id,
+            selectAnswers:selAnswers
+          };
+        }
+      }else{
+        return {
+          selectedElementId:id,
+          selectAnswers:selAnswers
+        };
+      }
     });
-    if(!this.state.isTrueAnswerDone)
-      this.checkAnswer(id);
   }
 
   onTogglePlay = (player) =>{
@@ -89,28 +113,6 @@ class App extends Component {
         score:0,
       
       };
-    });
-  }
-
-  checkAnswer = id =>{
-    this.setState((state)=>{
-      if(id === (state.randomIndex+1)){
-        const audio = new Audio(rightAnswerAudio);
-        audio.play();
-        state.activeAudioplayer.current.audio.current.pause();
-        return {
-          isTrueAnswerDone:true,
-          score:state.score+state.scoreCanWork,
-          activeAudioplayer:null
-        };
-      }else{
-        const audio = new Audio(wrongAnswerAudio);
-        audio.play();
-        return {
-          isTrueAnswerDone:false,
-          scoreCanWork:state.scoreCanWork-1
-        };
-      }
     });
   }
 

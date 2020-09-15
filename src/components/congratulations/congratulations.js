@@ -30,7 +30,4 @@ const Congratulations = (props) =>{
         </div>
     );
 }
-
-//<BtnNextlevel active={true} onBtnClick = {this.onBtnClick} btnLabel='Сыграть еще раз' />
-        
 export default Congratulations;

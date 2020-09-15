@@ -3,8 +3,7 @@ import './levels-list.css';
 import LevelsListItem from '../levels-list-item';
 
 const LevelsList = ({levelsData,activeLevel}) => {
-   
-    const items = levelsData.map((title)=>{
+      const items = levelsData.map((title)=>{
       const isActive = activeLevel===title[0] ? true : false;
       const classNameItem = isActive ? "page-item active  " : "page-item ";
       return (
@@ -13,7 +12,6 @@ const LevelsList = ({levelsData,activeLevel}) => {
         </li>
         );
     });
-    //isActive={isActive}
     return (
       <ul className="pagination d-flex">
         {items}
