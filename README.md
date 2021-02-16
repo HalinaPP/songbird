@@ -1,3 +1,12 @@
+# Ссылка на задание#
+https://github.com/rolling-scopes-school/tasks/blob/master/tasks/songbird.md
+
+# Скриншот задания#
+![Без имени](https://user-images.githubusercontent.com/55688514/91472769-9b87c880-e8a0-11ea-90d0-fde48a1d8dcc.jpg)
+
+# Ссылка на деплой задания#
+[https://halinapp-songbird.netlify.app/](https://halinapp-songbird.netlify.app/)
+
 # songbird
 Songbird(Transport Quiz) - одностраничное приложение, викторина для определения вида транспорта по их звучанию.
 
